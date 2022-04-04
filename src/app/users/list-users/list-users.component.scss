@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+  .card-info{
+    p {
+      margin-bottom: 0px;
+      span{
+        font-weight: 600;
+      }
+    }
+  }
+  .card-userFooter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    margin-top: 15px;
+  }
