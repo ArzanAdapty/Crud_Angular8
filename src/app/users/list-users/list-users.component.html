@@ -1,21 +1,32 @@
-<h1>User list</h1>
-<div class="row">
-  <div class="col-md-3 mb-3" *ngFor="let ele of userService.userList; let i = index">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Name: {{ele.userName}}</h5>
-        <div class="card-info">
-          <p class="card-text">Id No: <span>{{i+1}}</span></p>
-          <p class="card-text">City: <span>{{ele.userCity}}</span></p>
-          <p class="card-text">State: <span>{{ele.userState}}</span></p>
-          <p class="card-text">Mobile: <span>{{ele.userMobile}}</span></p>
-          <p class="card-text">Alt Mobile: <span>{{ele.userAltMobile}}</span></p>
-        </div>
-        <div class="card-userFooter">
-          <a class="btn btn-primary" [routerLink]="['/users/edit',ele.userId]">Edit</a>
-          <a class="btn btn-secondary" (click)="DeleteUser(ele.userId)">Delete</a>
+
+
+<div>
+  <h1>User list</h1>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let ele of userService.userList; let i = index">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ele.userName}}</h5>
+          <div class="card-info">
+            <p class="card-text">Id No: <span>{{i+1}}</span></p>
+            <p class="card-text">City: <span>{{ele.userCity}}</span></p>
+            <p class="card-text">State: <span>{{ele.userState}}</span></p>
+            <p class="card-text">Mobile: <span>{{ele.userMobile}}</span></p>
+            <p class="card-text">Alt Mobile: <span>{{ele.userAltMobile}}</span></p>
+          </div>
+          <div class="card-userFooter">
+            <a class="btn btn-primary" [routerLink]="['/users/edit',ele.userId]">Edit</a>
+            <a class="btn btn-secondary" (click)="userService.DeleteUser(ele.userId)">Delete</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- 
+*ngIf="isUser; else EmtyList"
+<ng-template #EmtyList>
+  <div>
+      some Content here .....
+  </div>
+</ng-template> -->

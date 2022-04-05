@@ -24,6 +24,8 @@ export class UserService {
   }
   createUser(){
     debugger
+    console.log(this.userObj);
+    console.log(userObj)
     const lastedId = this.getNewUserId();
     this.userObj.userId = lastedId;
     const oldRecords = localStorage.getItem('userList');
@@ -69,6 +71,7 @@ export class UserService {
     if(records !== null){
       this.userList = JSON.parse(records);
     }
+    alert(`Delete user ${id}`)
     this.router.navigate(['/users/list']);
   }
 }
